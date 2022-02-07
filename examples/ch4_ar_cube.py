@@ -6,6 +6,7 @@ from PIL import Image
 from PCV.geometry import homography, camera
 from PCV.localdescriptors import sift
 
+
 """
 This is the augmented reality and pose estimation cube example from Section 4.3.
 """
@@ -56,10 +57,13 @@ def my_calibration(sz):
 
 
 # compute features
-sift.process_image('../data/book_frontal.JPG','im0.sift')
+sift.process_image('C:/Users/fa83629/source/repos/PCV/data/book_frontal.JPG','im0.sift')
+#sift.process_image('/data/book_perspective.JPG','im1.sift')
+
+
 l0,d0 = sift.read_features_from_file('im0.sift')
 
-sift.process_image('../data/book_perspective.JPG','im1.sift')
+sift.process_image('./data/book_perspective.JPG','im1.sift')
 l1,d1 = sift.read_features_from_file('im1.sift')
 
 
